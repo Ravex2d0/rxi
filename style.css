@@ -1,0 +1,95 @@
+body {
+  font-family: sans-serif;
+  background: radial-gradient(circle at 70% 50%, #2d104d, #10154d) center/cover;
+  color: white;
+  padding: 20px;
+}
+
+.container {
+  max-width: 95%;
+  margin: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+}
+
+input[type="file"] {
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+}
+input[type="file"]::file-selector-button {
+  width: 80px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  backdrop-filter: blur(15px);
+  transition: 0.2s;
+}
+input[type="file"]::file-selector-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+canvas {
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  transition: 0.2s;
+}
+canvas:hover {
+  transform: translateY(-5px) scale(1.025);
+}
+
+input[type="text"] {
+  width: 80px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  backdrop-filter: blur(15px);
+  transition: 0.2s;
+}
+input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+button {
+  height: 30px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  backdrop-filter: blur(15px);
+  transition: 0.2s;
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+select {
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin: 10px;
+  color: white;
+  backdrop-filter: blur(15px);
+  }
