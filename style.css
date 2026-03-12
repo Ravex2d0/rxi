@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  background: radial-gradient(circle at 70% 50%, #2d104d, #10154d) center/cover;
+  background: radial-gradient(at 62% 73%, #1540ad 0px, transparent 50%), radial-gradient(at 46% 27%, #3615ad 0px, transparent 50%), radial-gradient(at 37% 65%, #8215ad 0px, transparent 50%) #000000;
+  mix-blend-mode: screen;
   color: white;
   padding: 20px;
 }
