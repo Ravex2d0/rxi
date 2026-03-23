@@ -2,21 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RVX Viewer & Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RXI Viewer & Converter</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <progress id="progressBar" value="0" max="100" style="width:100%;"></progress>
     <br><br>
     <div class="container">
-      <h2>RVX Reader</h2>
-      <input type="file" id="rvxFile">
+      <h2>RXI Reader</h2>
+      <input type="file" id="rxiFile">
       <br><br>
       <canvas id="canvas"></canvas>
       <div id="infoBox"></div>
       <button id="downloadPNG">Download PNG</button>
-      <h2>Image → RVX Converter</h2>
+      <h2>Image → RXI Converter</h2>
       <input type="file" id="pngFile" accept="image/*" multiple>
       <select id="scanMode">
         <option value="0" selected>Smart</option>
@@ -26,7 +26,7 @@
       <label>Creator:</label>
       <input type="text" id="creatorName" placeholder="Creator name">
       <br><br>
-      <button id="convert">Convert to RVX</button>
+      <button id="convert">Convert to RXI</button>
     </div>
 
     <script src="script.js"></script>
