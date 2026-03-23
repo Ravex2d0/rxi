@@ -6,20 +6,20 @@ const progressBar = document.getElementById("progressBar");
 const scanModeSelect = document.getElementById("scanMode");
 const creatorInput = document.getElementById("creatorName");
 
-document.getElementById("rvxFile").onchange = e => {
+document.getElementById("rxiFile").onchange = e => {
   const f = e.target.files[0];
   if (!f) return;
   const r = new FileReader();
-  r.onload = () => parseRVX(new Uint8Array(r.result));
+  r.onload = () => parseRXI(new Uint8Array(r.result));
   r.readAsArrayBuffer(f);
 };
 
-async function parseRVX(b) {
+async function parseRXI(b) {
   let p = 0;
 
   // SOF
   if (b[p++] !== 0x02 || b[p++] !== 0xD0) return alert("Invalid SOF");
-  if (str(b, p, 3) !== "RVX") return alert("Invalid RVX");
+  if (str(b, p, 3) !== "RXI") return alert("Invalid RXI");
   p += 3;
   p += 3;
 
@@ -158,8 +158,8 @@ document.getElementById("convert").onclick = async () => {
     await new Promise(resolve => {
       const img = new Image();
       img.onload = async () => {
-        const rvxData = await pngToRVX(img, scanMode, creator);
-        zip.file(f.name.replace(/\.[^/.]+$/, ".rvx"), rvxData);
+        const rxiData = await pngToRXI(img, scanMode, creator);
+        zip.file(f.name.replace(/\.[^/.]+$/, ".rxi"), rxiData);
         resolve();
       };
       img.src = URL.createObjectURL(f);
@@ -170,13 +170,13 @@ document.getElementById("convert").onclick = async () => {
   zip.generateAsync({ type: "blob" }).then(blob => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "batch_rvx.zip";
+    a.download = "batch_rxi.zip";
     a.click();
     progressBar.value = 100;
   });
 };
 
-async function pngToRVX(img, scanMode, creator) {
+async function pngToRXI(img, scanMode, creator) {
   console.log('conversion started...');
   const c = document.createElement("canvas");
   c.width = img.width;
@@ -207,7 +207,7 @@ async function pngToRVX(img, scanMode, creator) {
   const header = [];
 
   // SOF
-  header.push(0x02, 0xD0, ...asc("RVX"), 0x0A, 0x0A, 0x0A);
+  header.push(0x02, 0xD0, ...asc("RXI"), 0xE2, 0x88, 0x9E);
 
   // FINF
   if (creator) {
